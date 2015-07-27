@@ -1,0 +1,15 @@
+<div class="page-heading animated fadeInDownBig">
+  <h1>Users <small>Create a new user</small></h1>
+</div>
+
+<div class='box-info row clear'>
+  <%= bootstrap_form_for(@user, url: { action: 'create' }) do |f| %>
+    <%= render_error_modal_for @user %>
+
+    <%= render partial: 'users/fields', locals: { f: f } %>
+
+    <div class='form-group'>
+    <%= f.submit 'Create' %>
+    </div>
+  <% end %>
+</div>
