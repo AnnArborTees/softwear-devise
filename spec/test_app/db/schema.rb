@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727142352) do
+ActiveRecord::Schema.define(version: 20150729180203) do
 
   create_table "softwear_devise_assets", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,12 +38,15 @@ ActiveRecord::Schema.define(version: 20150727142352) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "insightly_api_key"
-    t.string   "freshdesk_email"
     t.string   "freshdesk_password"
     t.string   "encrypted_freshdesk_password"
     t.integer  "profile_picture_id"
+    t.integer  "shiftplanning_employee_id"
+    t.string   "shiftplanning_token"
+    t.string   "authentication_token"
   end
 
+  add_index "softwear_devise_users", ["authentication_token"], name: "index_softwear_devise_users_on_authentication_token"
   add_index "softwear_devise_users", ["email"], name: "index_softwear_devise_users_on_email", unique: true
   add_index "softwear_devise_users", ["reset_password_token"], name: "index_softwear_devise_users_on_reset_password_token", unique: true
 

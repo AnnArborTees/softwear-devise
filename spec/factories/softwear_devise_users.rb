@@ -1,6 +1,20 @@
 FactoryGirl.define do
   factory :softwear_devise_user, :class => 'SoftwearDevise::User' do
-    
-  end
 
+#    factory :user do
+    first_name 'Test_First'
+    sequence(:last_name) { |n| "Test_Last_#{n}" }
+    sequence(:email) { |n| "user_email_#{n}@hotmail.com" }
+    password '1234567890'
+
+#      factory :alternate_user do
+#        first_name 'Test_First'
+#        sequence(:last_name) { |n| "Test_Alternate_Last_#{n}" }
+#        sequence(:email) { |n| "alternate_user_email_#{n}@umich.edu" }
+#      end
+#
+#      after(:create) { |u| u.confirm }
+#    end
+
+  end
 end
