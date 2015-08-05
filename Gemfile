@@ -9,6 +9,7 @@ gem 'attr_encrypted'
 gem 'email_validator'
 gem 'bootstrap_form'
 gem 'simple_token_authentication'
+gem 'inherited_resources'
 
 group :test do
   gem 'rspec-rails'

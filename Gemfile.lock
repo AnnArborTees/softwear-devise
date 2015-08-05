@@ -67,7 +67,15 @@ GEM
       railties (>= 3.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    has_scope (0.6.0)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     i18n (0.7.0)
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5)
+      has_scope (~> 0.6.0.rc)
+      railties (>= 3.2, < 5)
+      responders
     json (1.8.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
@@ -155,6 +163,7 @@ DEPENDENCIES
   devise
   email_validator
   factory_girl_rails
+  inherited_resources
   rspec-rails
   shoulda-matchers
   simple_token_authentication
