@@ -44,6 +44,9 @@ RSpec.configure do |config|
 
   FactoryGirl.definition_file_paths << File.join(File.dirname(__FILE__), 'factories')
   FactoryGirl.find_definitions
+
+  Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

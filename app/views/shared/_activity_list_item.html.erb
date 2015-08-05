@@ -1,0 +1,23 @@
+<li>
+  <div class="the-date" data-date="<%= activity.created_at.to_s(:db) %>">
+    <span><%= activity.created_at.strftime('%d') %></span>
+    <small><%= activity.created_at.strftime('%b') %></small>
+  </div>
+  <h4>
+    <% if activity.trackable.respond_to?(:activity_source) && source = activity.trackable.activity_source(activity) %>
+      <%= source %>
+    <% elsif activity.owner %>
+      <%= link_to(activity.owner.full_name, activity.owner) %>
+    <% else %>
+      Someone
+    <% end %>
+  </h4>
+
+  <p>
+    <%= render_activity activity %>
+  </p>
+
+  <p class="time">
+    <%= display_time(activity.created_at) %>
+  </p>
+</li>

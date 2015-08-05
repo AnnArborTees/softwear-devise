@@ -7,3 +7,9 @@
   <dd>user.email</dd>
 </dl>
 
+<% if defined?(PublicActivity) %>
+  <div class="box-info">
+    <%= render partial: 'shared/timeline',
+               locals: {activities: @user.all_activities} %>
+  </div>
+<% end %>

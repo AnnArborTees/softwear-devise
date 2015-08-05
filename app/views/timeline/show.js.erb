@@ -1,0 +1,5 @@
+showContentModal({
+  title: $("Order #<%= j @order.id.to_s %>"),
+  body: $("<%= j(render partial: 'shared/timeline',
+                        locals: { activities: @order.all_activities }).html_safe %>")
+});
